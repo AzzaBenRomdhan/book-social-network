@@ -1,0 +1,42 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/book_social_network
+    username: postgres
+    password: Admin
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  mail:
+    host: localhost
+    port: 1025
+    username: azza
+    password: azza
+    properties:
+      mail:
+        smtp:
+          trust: "*"
+        auth: true
+        starttls:
+          enable: true
+        connectiontimeout: 5000
+        timeout: 3000
+        writetimeout: 5000
+
+application:
+  security:
+    jwt:
+      secret-key: 484b48b1b09acaf8c27517ab0ff5aa3145cfa335555d07010c8da1ebfad224243e27a17b04385748b527f2bac37d4647494257ddce9bb4e491045a7694d35ca4d7d4d128d533f599fe48d1a184b2475c7d527c2b1056e8e1db80f33ea3d367b49d532a2e0884d63f51c99cbf8302f2f895f6488dfc7ee49ba26be1660d310b6b3f033f9e3906c6f46da332d6c1b6ed6ff6f5a2cae2cfae5273a74fc08645a30f3b0be08b84a6bdf824b89234b7adb0113ef523ad759f084c93d47684bbdabc3978a49d3c6329c9981836f486f04b18663e941abb7f70bd78ad1844d72d64dfcbfcebf315215dcd1208f8eaf0e2d0e6a3a51f5d4d3e96d86c66c45f87d64af6c6
+      expiration: 86400000
+  mailing:
+    frontend:
+      activation-url: http://localhost:4200/activate-account
+server:
+  port: 8088
+

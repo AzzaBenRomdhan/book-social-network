@@ -1,0 +1,68 @@
+<body>
+<div class="login-card">
+  <div class="brand">
+    <h1>Crete a new account</h1>
+    <div class="alert alert-danger" role="alert" *ngIf="errorMsg.length">
+      <p *ngFor="let msg of errorMsg">{{ msg }}</p>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input
+      [(ngModel)]="registerRequest.email"
+      type="email"
+      id="email"
+      placeholder="name@company.com"
+    >
+  </div>
+
+  <div class="form-group">
+    <label for="firstname">Firstname</label>
+    <input
+      [(ngModel)]="registerRequest.firstname"
+      type="text"
+      id="firstname"
+      placeholder="your firstname"
+    >
+  </div>
+
+  <div class="form-group">
+    <label for="lastname">Lastname</label>
+    <input
+      [(ngModel)]="registerRequest.lastname"
+      type="text"
+      id="lastname"
+      placeholder="your lastname"
+    >
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input
+      [(ngModel)]="registerRequest.password"
+      type="password"
+      id="password"
+      placeholder="Enter your password"
+    >
+  </div>
+  <!--
+
+  <div class="remember-forgot">
+    <div class="remember-me">
+      <input type="checkbox" id="remember">
+      <label for="remember">Remember me</label>
+    </div>
+    <a href="#" class="forgot-password">Forgot password?</a>
+  </div>
+  -->
+
+  <button (click)="register()" type="submit" class="login-btn" id="loginButton">
+    Sign up
+  </button>
+
+  <div class="signup-link">
+    <p>Already have an account ? <a (click)="login()">Sign in</a></p>
+  </div>
+</div>
+</body>
